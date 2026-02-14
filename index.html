@@ -12,21 +12,48 @@
             background: #f5f5f7;
             line-height: 1.6;
         }
-        .container { max-width: 680px; margin: 0 auto; padding: 48px 24px; }
-        h1 { font-size: 2rem; font-weight: 700; margin-bottom: 8px; }
-        h2 { font-size: 1.25rem; font-weight: 600; margin-top: 32px; margin-bottom: 12px; }
+        .container { max-width: 720px; margin: 0 auto; padding: 48px 24px; }
+        h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 8px; }
+        h2 { font-size: 1.3rem; font-weight: 600; margin-top: 40px; margin-bottom: 16px; }
         p { margin-bottom: 16px; color: #424245; }
         a { color: #0066cc; text-decoration: none; }
         a:hover { text-decoration: underline; }
         .subtitle { font-size: 1.1rem; color: #6e6e73; margin-bottom: 32px; }
+        .hero {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .hero p { color: #6e6e73; font-size: 1.05rem; }
+        .screenshots {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            padding: 8px 0 16px;
+            -webkit-overflow-scrolling: touch;
+        }
+        .screenshots img {
+            height: 420px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+            flex-shrink: 0;
+        }
         .card {
             background: #fff;
             border-radius: 16px;
-            padding: 24px;
-            margin-bottom: 16px;
+            padding: 20px 24px;
+            margin-bottom: 12px;
         }
-        .card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 8px; }
-        .card p { margin-bottom: 0; }
+        .card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 6px; }
+        .card p { margin-bottom: 0; font-size: 0.95rem; }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        @media (max-width: 540px) {
+            .feature-grid { grid-template-columns: 1fr; }
+        }
+        .feature-grid .card { display: flex; flex-direction: column; }
         .faq-q { font-weight: 600; margin-bottom: 4px; color: #1d1d1f; }
         .faq-a { margin-bottom: 20px; }
         .footer {
@@ -39,6 +66,17 @@
         .footer a { color: #86868b; }
         .nav { margin-bottom: 32px; font-size: 0.9rem; }
         .nav a { margin-right: 16px; }
+        .badge {
+            display: inline-block;
+            background: #e8e8ed;
+            color: #1d1d1f;
+            font-size: 0.8rem;
+            font-weight: 500;
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-right: 6px;
+            margin-bottom: 8px;
+        }
     </style>
 </head>
 <body>
@@ -48,25 +86,73 @@
             <a href="privacy-policy.html">Privacy Policy</a>
         </div>
 
-        <h1>CubbyScan Support</h1>
-        <p class="subtitle">Scan, track, and find everything you store.</p>
+        <div class="hero">
+            <h1>CubbyScan</h1>
+            <p>Scan, track, and find everything you store.</p>
+            <div style="margin-top: 12px;">
+                <span class="badge">iOS 17+</span>
+                <span class="badge">iPhone</span>
+                <span class="badge">Free</span>
+                <span class="badge">No Account Required</span>
+            </div>
+        </div>
+
+        <div class="screenshots">
+            <img src="images/home_view.png" alt="Home dashboard">
+            <img src="images/box_view.png" alt="Box detail view">
+            <img src="images/qr_code_view.png" alt="QR code view">
+            <img src="images/location_view.png" alt="Locations view">
+            <img src="images/import_export_view.png" alt="Export and import view">
+        </div>
+
+        <h2>Features</h2>
+        <div class="feature-grid">
+            <div class="card">
+                <h3>Box Management</h3>
+                <p>Create, edit, and archive storage boxes. Assign them to locations and track what's inside.</p>
+            </div>
+            <div class="card">
+                <h3>Item Tracking</h3>
+                <p>Add items with quantities, categories, tags, and descriptions. Search across everything instantly.</p>
+            </div>
+            <div class="card">
+                <h3>QR Code Labels</h3>
+                <p>Every box gets a unique QR code. Save or share it for printing, then scan it to see contents.</p>
+            </div>
+            <div class="card">
+                <h3>Photo Capture</h3>
+                <p>Take photos of box contents or pick from your library. Tap any photo to view it full screen.</p>
+            </div>
+            <div class="card">
+                <h3>Locations</h3>
+                <p>Organize boxes by where they're stored &mdash; garage, attic, closet, storage unit, or anywhere.</p>
+            </div>
+            <div class="card">
+                <h3>Export &amp; Import</h3>
+                <p>Back up all your data to a .cubbyscan file including photos. Restore on any device via AirDrop or Files.</p>
+            </div>
+        </div>
 
         <h2>Getting Started</h2>
         <div class="card">
             <h3>1. Create a Location</h3>
-            <p>Start by adding where you store things &mdash; your garage, attic, closet, or storage unit.</p>
+            <p>Add where you store things &mdash; your garage, attic, closet, or storage unit.</p>
         </div>
         <div class="card">
             <h3>2. Add a Box</h3>
             <p>Create a box, give it a name, assign it to a location, and add the items inside.</p>
         </div>
         <div class="card">
-            <h3>3. Print or Save the QR Label</h3>
+            <h3>3. Print the QR Label</h3>
             <p>Every box gets a unique QR code. Save it to your Photos or share it for printing, then stick it on the box.</p>
         </div>
         <div class="card">
             <h3>4. Scan Anytime</h3>
-            <p>Point your camera at a label to instantly see what's inside. Or just search the app.</p>
+            <p>Point your camera at a label to instantly see what's inside. Or use the search tab to find anything.</p>
+        </div>
+        <div class="card">
+            <h3>5. Back Up Your Data</h3>
+            <p>Go to Settings and tap Export to create a backup file. Import it on another device to transfer everything.</p>
         </div>
 
         <h2>Frequently Asked Questions</h2>
@@ -74,8 +160,14 @@
         <p class="faq-q">Does CubbyScan require an internet connection?</p>
         <p class="faq-a">No. CubbyScan works entirely offline. All your data is stored on your device.</p>
 
+        <p class="faq-q">How do I back up my data?</p>
+        <p class="faq-a">Open Settings from the Home screen, then tap Export All Data. This creates a compressed .cubbyscan file containing all your locations, boxes, items, and photos. You can save it to Files, send it via AirDrop, or share it any way you like.</p>
+
+        <p class="faq-q">How do I restore a backup?</p>
+        <p class="faq-a">In Settings, tap Import from Backup and select your .cubbyscan file. You'll see a preview of what's in the backup before confirming. You can also open a .cubbyscan file directly from Files or AirDrop.</p>
+
         <p class="faq-q">How do I print QR labels?</p>
-        <p class="faq-a">Open a box, tap the share button on the QR code, and save it to your Photos or send it to any printer via the share sheet.</p>
+        <p class="faq-a">Open a box, tap the QR code, then use Share or Save to Photos. Print from the Photos app or any print service.</p>
 
         <p class="faq-q">Can I move items between boxes?</p>
         <p class="faq-a">Yes. Edit an item and change its assigned box.</p>
@@ -86,8 +178,11 @@
         <p class="faq-q">What if a QR label gets damaged?</p>
         <p class="faq-a">You can reprint the label anytime from the box detail screen. Your data is not stored on the label itself.</p>
 
+        <p class="faq-q">Is my data shared with anyone?</p>
+        <p class="faq-a">No. CubbyScan has no analytics, no ads, no accounts, and no servers. Everything stays on your device. See our <a href="privacy-policy.html">Privacy Policy</a> for details.</p>
+
         <h2>Contact</h2>
-        <p>If you need help or have feedback, reach out at <a href="mailto:cubbyscan@icloud.com">cubbyscan@icloud.com</a>.</p>
+        <p>If you need help or have feedback, reach out at <a href="mailto:praveen.sxi@gmail.com">praveen.sxi@gmail.com</a>.</p>
 
         <div class="footer">
             <p>&copy; 2026 CubbyScan &middot; <a href="privacy-policy.html">Privacy Policy</a></p>
